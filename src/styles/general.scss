@@ -1,5 +1,24 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container{
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.project-box{
+  margin: 20px;
+  h3{
+      margin-bottom: 10px;
+  }
 }
