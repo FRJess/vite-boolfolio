@@ -5,7 +5,7 @@ export default {
     name: 'App',
     data(){
         return {
-            baseUrl: 'http://127.0.0.1:8000/api',
+            baseUrl: 'http://127.0.0.1:8000/api/',
             projects : [],
             contentMaxLenght: 150,
             pagination:{
@@ -24,6 +24,7 @@ export default {
             })
                 .then(result => {
                     this.projects = result.data.projects.data;
+                    console.log(this.projects)
                     this.pagination.current = result.data.projects.current_page;
                     this.pagination.last = result.data.projects.last_page;
                 })
