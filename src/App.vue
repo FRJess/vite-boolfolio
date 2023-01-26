@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import cards from './components/ProjectCard.vue';
 
 export default {
   name: 'App',
