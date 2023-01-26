@@ -1,9 +1,14 @@
 <script>
 import axios from 'axios';
-import cards from './components/ProjectCard.vue';
+import ProjectCard from './components/ProjectCard.vue';
 
 export default {
   name: 'App',
+  components:{
+    ProjectCard,
+  },
+
+
   data(){
     return {
       baseUrl: 'http://127.0.0.1:8000/api/',
@@ -11,7 +16,7 @@ export default {
       contentMaxLenght: 100,
       pagination:{
           current: 1,
-          last: null
+          last: null,
       }
     }
   },
@@ -49,15 +54,8 @@ export default {
 <div class="container">
   <h1>Projects list</h1>
 
-  <div>
-    <div v-for="project in projects" :key="project.id" class="project-box">
-      <h3>{{project.name}}</h3>
-      <h4 v-if="project.type">Type: {{ project.type.name }}</h4>
-      <div class="technologies" v-if="project.technologies.length">
-        <span v-for="technology in project.technologies" :key="technology.id">{{ technology.name }}</span>
-      </div>
-      <p v-html="truncateText(project.summary)"></p>
-    </div> 
+  <div class="project-box" v-for="project in projects" :key="project.id">
+    <ProjectCard :project="project"/>
   </div>
 
   <div class="paginator">
