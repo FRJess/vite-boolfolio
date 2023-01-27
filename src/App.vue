@@ -59,32 +59,32 @@ export default {
   </div>
 
   <div class="paginator">
-    <button
+    <button class="btn btn-primary"
     :disabled="pagination.current === 1"
     @click="getApi(1)"
-    >| &lt; </button>
+    >|&lt; </button>
 
-    <button
+    <button class="btn btn-primary"
     :disabled="pagination.current === 1"
-    @click="getApi(pagination.current - 1)"
+    @click="getApi(pagination.current -1)"
     >&larr;</button>
 
-    <button
+    <button class="btn btn-primary"
     v-for="i in pagination.last" :key="i"
     :disabled="pagination.current === i"
-    @onclick="getApi(i)"
+    @click="getApi(i)"
     >{{ i }}
     </button>
 
-    <button
+    <button class="btn btn-primary"
     :disabled="pagination.current === pagination.last"
     @click="getApi(pagination.current + 1)"
     >&rarr;</button>
 
-    <button
+    <button class="btn btn-primary"
     :disabled="pagination.current === pagination.last"
     @click="getApi(pagination.last)"
-    > >|</button>
+    >|></button>
   </div>
 
 </div>
